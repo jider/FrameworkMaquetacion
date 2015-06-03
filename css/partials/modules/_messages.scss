@@ -1,0 +1,21 @@
+
+/* ------------------------------
+   FUNCTIONAL
+------------------------------ */
+
+@import "messages/config";
+@import "messages/mixins";
+
+
+/* ------------------------------
+   PRESENTATIONAL
+------------------------------ */
+
+@each $message-def in $messages-desc {
+	$type: nth($message-def, 1);	
+	$size: nth($message-def, 2);
+
+	.message-#{$size}-#{$type} {
+		@include message($type, $size);
+	}
+}
